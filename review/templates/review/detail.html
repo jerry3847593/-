@@ -1,0 +1,15 @@
+{% extends 'review/base.html' %}
+
+{% block content %}
+
+    <h1>자세하게~</h1>
+    <div>
+        <h2>
+            {{post.title}}&emsp;{{post.score}}&emsp;{{post.created_date}}
+        </h2>
+        <p>{{post.text}}</p>
+        
+        <a href = '{% url "edit" post.id  %}'>수정하자</a>
+        <a href = '{% url "delete" post.id  %}'>삭제하자</a>
+    </div>
+{% endblock %}
