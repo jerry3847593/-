@@ -7,6 +7,8 @@
 <body>
     <h1><strong>모든걸 다 리뷰</strong></h1>
     <div>
+        <a href="{% url 'accounts:signup' %}">회원가입</a>
+        <a href = "{% url 'login' %}">LOGIN</a>
         <a href = "{% url 'new' %}">새 글 써짐</a>
         <a href = "{% url 'home' %}">홈으로</a>
     </div>

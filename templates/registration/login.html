@@ -1,0 +1,16 @@
+{% extends 'review/base.html' %}
+
+{% block content %}
+<div>
+    {% if form.errors %}
+    <P>맞지 않은 사용자 정보입니다. 다시 입력하세요!</P>
+    {% endif %}
+    <h1>login</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit'>login</button>
+    </form>
+</div>
+
+{% endblock %}

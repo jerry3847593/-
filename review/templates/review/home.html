@@ -2,6 +2,17 @@
 
 {% block content %}
 
+    {% if user.is_active %}
+    <p>{{user.username}}님 반갑습니다.</p>
+    
+    <p><a href = '{% url "logout" %}'>logout</a></p>
+    {% else %}
+    <p>you are not logged in</p>
+    <a href = '{% url 'login' %}'>login</a>
+    <a href = "{% url 'accounts:signup' %}">signup</a>
+   
+    {% endif %}
+
 
     <h1>리뷰해주세요~</h1>
     <a href = "{% url  'new'  %}">누르면 새 글 작성</a>
